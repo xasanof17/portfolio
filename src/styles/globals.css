@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("./fonts.css");
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark body {
+  background: #14191f;
+}
+
+html.light *::selection {
+  background: #000;
+  color: #fff;
+}
+
+html.dark *::selection {
+  background: #fff;
+  color: #000;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+@media (max-width: 425px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+.main #notyet {
+  min-height: 491px;
+
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlink.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 249 250 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 6px;
+}
+@media (max-width: 400px) {
+  .home {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .header-title {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .heading {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .heading {
+    font-size: 50px;
+  }
+}
+@media (max-width: 668px) {
+  .heading {
+    font-size: 40px;
+  }
+}
+@media (max-width: 425px) {
+  .heading {
+    font-size: 31px;
+  }
+}
+@media (max-width: 424px) {
+  .heading {
+    font-size: 25px;
+  }
+}
+@media (max-width: 353px) {
+  .heading {
+    font-size: 22px;
+  }
+}
+/* @media (max-width: 639px) {
+  .skills {
+    grid-template-columns: repeat(3, minMax(0, fr)) !important;
+  }
+}
+@media (max-width: 400px) {
+  .skills {
+    grid-template-columns: repeat(2, minMax(0, fr)) !important;
+  }
+} */
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

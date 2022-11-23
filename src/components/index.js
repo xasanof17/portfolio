@@ -1,0 +1,10 @@
+export { default as Header } from "./Header";
+export { default as MenuBlock } from "./MenuBlock";
+export { default as NotYet } from "./NotYet";
+export { default as Skills } from "./Skills";
+export { default as About } from "./About";
+export { default as Careers } from "./Careers";
+export { default as Projects } from "./Projects";
+export { default as ProjectInfo } from "./ProjectInfo";
+export { default as Resume } from "./Resume";
+export { default as Contact } from "./Contact";
