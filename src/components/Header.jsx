@@ -1,10 +1,10 @@
-import Image from "next/image";
-import React from "react";
-import reactLogo from '../assets/img/react.svg'
+import Image from 'next/image';
+import React from 'react';
+import reactLogo from '../assets/img/react.svg';
 
 const Header = () => {
   return (
-    <section className="my-24">
+    <section className="mt-24 mb-10 sm:my-24">
       <div className="container">
         <div className="flex flex-col items-center justify-center">
           <span className="text-blue dark:text-gray uppercase text-sm font-normal">
@@ -39,12 +39,9 @@ const Header = () => {
           <p className="text-blue dark:text-gray text-base sm:text-lg text-center">
             I'm focused on building responsive front-end web applications.
           </p>
-          <Image
-            src={reactLogo}
-            style={{width: 100, height: 80}}
-            className="App-logo my-5"
-            alt='react logo'
-          />
+          <div className="relative w-[100px] h-[80px] my-5">
+            <Image src={reactLogo} fill className="App-logo" alt="react logo" />
+          </div>
         </div>
       </div>
     </section>

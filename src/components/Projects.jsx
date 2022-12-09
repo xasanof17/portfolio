@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import { Button } from "../utils";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { Button } from '../utils';
+import Link from 'next/link';
 
 const customBtn = () => {
   return (
@@ -14,7 +14,7 @@ const customBtn = () => {
   );
 };
 
-const Projects = ({ projects, margin }) => {
+const Projects = ({ projects, className }) => {
   const [show, setShow] = useState(-1);
   const router = useRouter();
   const mouseEnter = (i) => {
@@ -24,37 +24,33 @@ const Projects = ({ projects, margin }) => {
     setShow(-1);
   };
   return (
-    <section id="projects" className={margin ? 'my-24': ''}>
+    <section id="projects" className={`${className ? className : 'my-24'}`}>
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {projects.map((item, i) => (
             <div
-              className={`bg-gray rounded-lg shadow shadow-white border-2 border-slate-200 p-2 overflow-y-hidden ${
-                show === i ? "relative" : ""
+              className={`overflow-y-hidden rounded-lg border-2 border-slate-200 bg-gray p-2 shadow shadow-white ${
+                show === i ? 'relative' : ''
               }`}
               key={item.node.id}
               onMouseEnter={() => mouseEnter(i)}
               onMouseLeave={mouseLeave}
             >
-              <Image
-                src={item.node.photo.url}
-                alt={item.node.slug}
-                width={600}
-                height={400}
-                className="pointer-events-none"
-              />
+              <div className="pointer-events-none relative h-[200px] w-full sm:h-[300px]">
+                <Image src={item.node.photo.url} alt={item.node.slug} fill />
+              </div>
               {show === i && (
                 <div
-                  className={`absolute top-0 left-0 ease duration-300 w-full h-full rounded-xl p-2 flex flex-col items-center justify-center backdrop-blur-md`}
+                  className={`ease absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center rounded-xl p-2 backdrop-blur-md duration-300`}
                 >
-                  <h3 className="text-blue text-lg sm:text-xl uppercase font-bold mb-3">
+                  <h3 className="mb-3 text-lg font-bold uppercase text-blue sm:text-xl">
                     {item.node.title}
                   </h3>
                   <div className="flex items-center">
-                    <Link href={item.node.code} target={"_blank"}>
+                    <Link href={item.node.code} target={'_blank'}>
                       <Button>code</Button>
                     </Link>
-                    <Link href={item.node.demo} target={"_blank"}>
+                    <Link href={item.node.demo} target={'_blank'}>
                       <Button>demo</Button>
                     </Link>
                   </div>

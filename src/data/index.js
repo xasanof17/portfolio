@@ -51,25 +51,3 @@ export const getProjects = async () => {
   return result.projectsConnection.edges;
 };
 
-export const getResume = async () => {
-  const query = gql`
-    query MyQuery {
-      resumesConnection {
-        edges {
-          node {
-            id
-            title
-            bio
-            photo {
-              url
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const result = await request(graphqlAPI, query);
-
-  return result.resumesConnection.edges;
-};

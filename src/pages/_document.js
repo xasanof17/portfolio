@@ -7,7 +7,7 @@ export default function Document() {
         <meta name="author" content="Xasanov Javohir" />
         <meta
           name="description"
-          content="This is Full-Stack Portfolio by Javohir"
+          content="Portfolio | Javokhir"
         />
         <link rel="icon" href="/dev.svg" />
         <link rel="apple-touch-icon" href="/dev.svg" />

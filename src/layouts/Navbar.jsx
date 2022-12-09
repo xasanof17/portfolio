@@ -1,38 +1,38 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
+import { useRouter } from 'next/router';
 let video =
-  "https://www.youtube.com/watch?v=HYv55DhgTuA 47:00 https://www.youtube.com/watch?v=oUZLx79AN1A 3:20";
-import { MdLightMode, MdNightlight } from "react-icons/md";
-import { Button, NavLink } from "../utils";
-import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/img/logo.svg";
+  'https://www.youtube.com/watch?v=HYv55DhgTuA 47:00 https://www.youtube.com/watch?v=oUZLx79AN1A 3:20';
+import { MdLightMode, MdNightlight } from 'react-icons/md';
+import { Button, NavLink } from '../utils';
+import { AiOutlineMenu } from 'react-icons/ai';
+import logo from '../assets/img/logo.svg';
 
 const thems = () => {
   return (
     <>
-      {theme === "light" && (
+      {theme === 'light' && (
         <button
           type="button"
           className="flex items-center justify-center"
-          onClick={() => setTheme("dark")}
+          onClick={() => setTheme('dark')}
         >
           <MdNightlight
-            className="text-blue pointer-events-none"
+            className="pointer-events-none text-blue"
             fontSize={20}
           />
         </button>
       )}
 
-      {theme === "dark" && (
+      {theme === 'dark' && (
         <button
           className="flex items-center justify-center"
-          onClick={() => setTheme("light")}
+          onClick={() => setTheme('light')}
         >
           <MdLightMode
-            className="text-gray pointer-events-none"
+            className="pointer-events-none text-gray"
             fontSize={20}
           />
         </button>
@@ -42,10 +42,10 @@ const thems = () => {
 };
 
 const links = [
-  { title: "Home", name: "Home", href: "/" },
-  { title: "projects", name: "Projects", href: "/projects" },
-  { title: "pay", name: "Pay", href: "/payment" },
-  { title: "resume", name: "Resume", href: "/resume" },
+  { title: 'Home', name: 'Home', href: '/' },
+  { title: 'projects', name: 'Projects', href: '/projects' },
+  { title: 'pay', name: 'Pay', href: '/payment' },
+  { title: 'resume', name: 'Resume', href: '/resume' },
 ];
 
 const Navbar = () => {
@@ -53,41 +53,41 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const router = useRouter();
   return (
-    <header className="fixed top-0 left-0 w-full backdrop-blur-lg z-10">
+    <header className="fixed top-0 left-0 z-10 w-full backdrop-blur-lg">
       <nav className="w-full py-2 md:py-3">
         <div className="container">
           <div className="flex items-center justify-between">
-            <Link href={"/"} className="font-bold uppercase text-xl">
+            <Link href={'/'} className="text-xl font-bold uppercase">
               <Image src={logo} alt="logo" width={40} height={40} />
             </Link>
-            <ul className="hidden sm:flex items-center space-x-3">
+            <ul className="hidden items-center space-x-3 sm:flex">
               {links.map((link, i) => (
                 <NavLink
                   link={link}
                   key={i}
-                  className={router.pathname === link.href ? "active" : ""}
+                  className={router.pathname === link.href ? 'active' : ''}
                 />
               ))}
 
               <Button
-                onClick={() => router.push("/contact")}
-                className="lg:px-3 px-1"
+                onClick={() => router.push('/contact')}
+                className="px-1 lg:px-3"
               >
                 Contact me
               </Button>
             </ul>
-            <div className="sm:hidden block">
+            <div className="block sm:hidden">
               <button
                 onClick={() => setMenu(!menu)}
                 className="flex items-center justify-center"
               >
                 <AiOutlineMenu
-                  className="text-blue dark:text-gray pointer-events-none"
+                  className="pointer-events-none text-blue dark:text-gray"
                   fontSize={24}
                 />
               </button>
               {menu && (
-                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-white backdrop-blur-md z-20">
+                <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center justify-center bg-white backdrop-blur-md">
                   <ul className="flex items-center space-x-2">
                     {links.map((link, i) => (
                       <NavLink
@@ -95,23 +95,23 @@ const Navbar = () => {
                         key={i}
                         onClick={() => setMenu(!menu)}
                         className={
-                          router.pathname === link.href ? "active" : ""
+                          router.pathname === link.href ? 'active' : ''
                         }
                       />
                     ))}
-                    <Link href={"/contact"}>
+                    <Link href={'/contact'}>
                       <Button
                         onClick={() => setMenu(!menu)}
-                        className="mx-0 sm:block hidden"
+                        className="mx-0 hidden sm:block"
                       >
                         Contact me
                       </Button>
                       <p
                         onClick={() => {
                           setMenu(!menu);
-                          router.push("/contact");
+                          router.push('/contact');
                         }}
-                        className="sm:hidden block capitalize text-[15px] font-medium py-2 lg:px-3 px-2 text-blue dark:text-gray hover:bg-gray dark:hover:bg-[#14191f] hover:rounded-[6px] hover:border-darkgray dark:hover:border-[#32373e] hover:shadow border border-transparent rounded-none duration-300 ease-linear"
+                        className="block rounded-none border border-transparent py-2 px-2 text-[15px] font-medium capitalize text-blue duration-300 ease-linear hover:rounded-[6px] hover:border-darkgray hover:bg-gray hover:shadow dark:text-gray dark:hover:border-[#32373e] dark:hover:bg-[#14191f] sm:hidden lg:px-3"
                       >
                         contact
                       </p>

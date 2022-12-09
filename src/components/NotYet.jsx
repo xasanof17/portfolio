@@ -1,6 +1,6 @@
-import React from "react";
-import { Button } from "../utils";
-import { useRouter } from "next/router";
+import React from 'react';
+import { Button } from '../utils';
+import { useRouter } from 'next/router';
 
 const NotYet = () => {
   const router = useRouter();
@@ -8,10 +8,10 @@ const NotYet = () => {
     <>
       <div className="w-full" id="notyet">
         <div className="container flex flex-col items-center justify-center">
-          <h1 className="text-blue dark:text-gray uppercase mb-4">
+          <h1 className="mb-4 uppercase text-blue dark:text-gray">
             not yet ready this page!
           </h1>
-          <Button onClick={() => router.push("/")} className="capitalize">
+          <Button onClick={() => router.push('/')} className="capitalize">
             Come back soon
           </Button>
         </div>

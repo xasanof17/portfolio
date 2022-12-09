@@ -15,7 +15,7 @@ export default function Home({ skills }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const skills = (await getSkills()) || [];
 
 

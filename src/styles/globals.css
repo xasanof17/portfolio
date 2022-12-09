@@ -1,12 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("./fonts.css");
+@import url('./fonts.css');
 
 html,
 body {
   scroll-behavior: smooth;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #ffffff;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -100,16 +100,6 @@ html.dark *::selection {
     font-size: 22px;
   }
 }
-/* @media (max-width: 639px) {
-  .skills {
-    grid-template-columns: repeat(3, minMax(0, fr)) !important;
-  }
-}
-@media (max-width: 400px) {
-  .skills {
-    grid-template-columns: repeat(2, minMax(0, fr)) !important;
-  }
-} */
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -121,4 +111,11 @@ html.dark *::selection {
   to {
     transform: rotate(360deg);
   }
+}
+
+#resume #projects .container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: none;  
 }

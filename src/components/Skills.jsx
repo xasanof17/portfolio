@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const Skills = ({ skills }) => {
   return (
@@ -6,28 +6,29 @@ const Skills = ({ skills }) => {
       <div className="my-8">
         <div className="container">
           <div className="flex items-center justify-start">
-            <h2 className="text-blue dark:text-gray uppercase text-xl md:text-2xl font-bold">
+            <h2 className="text-xl font-bold uppercase text-blue dark:text-gray md:text-2xl">
               Skills
             </h2>
           </div>
           <div className="my-5">
-            <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3 lg:gap-5 skills">
+            <div className="skills grid grid-cols-2 gap-3 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 lg:gap-5">
               {skills.map((item) => (
                 <div
-                  className="bg-gray border border-slate-300 rounded-lg p-4 grid grid-rows-[1, 20px] gap-3 content-between"
+                  className="grid-rows-[1, 20px] grid content-between gap-3 rounded-lg border border-slate-300 bg-gray p-4"
                   key={item.node.id}
                 >
                   <div className="flex items-center justify-center">
-                    <Image
-                      src={item.node.photo.url}
-                      width={100}
-                      height={50}
-                      alt={item.node.slug}
-                      className="w-full select-none"
-                    />
+                    <div className="relative h-[100px] w-full">
+                      <Image
+                        src={item.node.photo.url}
+                        fill
+                        alt={item.node.slug}
+                        className="select-none"
+                      />
+                    </div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <h3 className="text-blue dark:text-gray capitalize">
+                    <h3 className="capitalize text-blue dark:text-gray">
                       {item.node.title}
                     </h3>
                   </div>
