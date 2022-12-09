@@ -68,7 +68,7 @@ const Resume = ({ skills, projects }) => {
                 The Strong Junior Web Developer
               </h3>
               <p className="text-justify text-[16px] font-medium text-blue dark:text-gray sm:text-lg lg:text-start">
-                I am Front-End Web Developer for 1.5 years. I have always had
+                I&apos;m Front-End Web Developer for 1.5 years. I have always had
                 the ability to work with technology and computers. In 2021, I
                 became very interested in web programming and started attending
                 courses. In the beginning, everything seemed very difficult to
@@ -76,7 +76,7 @@ const Resume = ({ skills, projects }) => {
                 I can say that I am a master of my profession. I was amazed at
                 how complicated programming was and quickly became interested in
                 learning more. I started learning JavaScript and became even
-                more passionate about making websites interactive. I'm currently
+                more passionate about making websites interactive. I&apos;m currently
                 spending my time building full-stack projects with Nextjs +
                 Nodejs and any more other technologies. Analytical, innovative,
                 and motivated web development professional with experience in
