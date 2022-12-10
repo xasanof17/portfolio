@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 
-const Button = ({ children, onClick, className }) => {
+const Button = ({ children, onClick, className, style }) => {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`${className} py-2 px-3 mx-3 text-white dark:text-white hover:text-blue dark:hover:text-white bg-blue dark:bg-[#49505a] hover:bg-gray rounded-[6px] shadow shadow-blue dark:shadow-none hover:shadow-gray border hover:border-darkgray dark:hover:border-gray border-transparent duration-300 ease-linear`}
+      className={`${className} rounded-[6px] border border-transparent bg-blue py-2 px-3 text-white shadow shadow-blue duration-300 ease-linear hover:border-darkgray hover:bg-gray hover:text-blue hover:shadow-gray dark:bg-[#49505a] dark:text-white dark:shadow-none dark:hover:border-gray dark:hover:text-white`}
+      style={style}
     >
       <span>{children}</span>
     </button>

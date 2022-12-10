@@ -48,10 +48,10 @@ const Projects = ({ projects, className }) => {
                   </h3>
                   <div className="flex items-center">
                     <Link href={item.node.code} target={'_blank'}>
-                      <Button>code</Button>
+                      <Button className='mx-3'>code</Button>
                     </Link>
                     <Link href={item.node.demo} target={'_blank'}>
-                      <Button>demo</Button>
+                      <Button className='mx-3'>demo</Button>
                     </Link>
                   </div>
                 </div>
