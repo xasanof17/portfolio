@@ -18,7 +18,7 @@ const links = [
 ];
 
 const Navbar = () => {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [menu, setMenu] = useState(false);
   const router = useRouter();
   return (
@@ -26,17 +26,18 @@ const Navbar = () => {
       <nav className="w-full py-2 md:py-3">
         <div className="container">
           <div className="flex items-center justify-between">
-            {theme === 'light' && (
-              <Link href={'/'} className="text-xl font-bold uppercase">
-                <Image src={logo} alt="logo" width={40} height={40} />
-              </Link>
-            )}
-            {theme === 'dark' && (
-              <Link href={'/'} className="text-xl font-bold uppercase">
-                <Image src={darkLogo} alt="logo" width={40} height={40} />
-              </Link>
-            )}
-
+            <div className="flex items-center justify-center">
+              {theme === 'light' && (
+                <Link href={'/'} className="text-xl font-bold uppercase">
+                  <Image src={logo} alt="logo" width={40} height={40} />
+                </Link>
+              )}
+              {theme === 'dark' && (
+                <Link href={'/'} className="text-xl font-bold uppercase">
+                  <Image src={darkLogo} alt="logo" width={40} height={40} />
+                </Link>
+              )}
+            </div>
             <ul className="hidden items-center space-x-3 sm:flex">
               {links.map((link, i) => (
                 <NavLink
