@@ -58,7 +58,7 @@ const Resume = ({ skills, projects }) => {
   return (
     <>
       <div className="mx-auto max-w-[1440px] px-5 sm:px-[30px]">
-        <div className="rounded-lg border border-slate-200 bg-slate-100 p-4 shadow sm:p-5">
+        <div className="rounded-lg border border-slate-200 bg-slate-100 p-4 shadow dark:border-slate-500 dark:bg-slate-600 sm:p-5">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
             {/* <div className="flex items-center justify-center md:col-span-1 md:justify-start">
               <div className="relative h-full w-full rounded-[50%]">
@@ -66,7 +66,7 @@ const Resume = ({ skills, projects }) => {
               </div>
             </div> */}
             <div className="md:col-span-3">
-              <h3 className="mb-2 text-center text-xl font-bold text-blue dark:text-gray lg:text-start">
+              <h3 className="mb-2 text-center text-lg font-bold text-blue dark:text-gray sm:text-xl lg:text-start">
                 The Strong Junior Web Developer
               </h3>
               <p className="text-justify text-[16px] font-medium text-blue dark:text-gray sm:text-lg lg:text-start">
@@ -147,7 +147,7 @@ const Resume = ({ skills, projects }) => {
             <div className="skills grid grid-cols-2 gap-3 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 lg:gap-5">
               {skills.map((item) => (
                 <div
-                  className="grid-rows-[1, 20px] grid content-between gap-3 rounded-lg border border-slate-300 bg-gray p-4"
+                  className="grid-rows-[1, 20px] grid content-between gap-3 rounded-lg border border-slate-300 bg-gray p-4 dark:border-slate-500 dark:bg-slate-700"
                   key={item.node.id}
                 >
                   <div className="flex items-center justify-center">

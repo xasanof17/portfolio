@@ -5,51 +5,20 @@ import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 let video =
   'https://www.youtube.com/watch?v=HYv55DhgTuA 47:00 https://www.youtube.com/watch?v=oUZLx79AN1A 3:20';
-import { MdLightMode, MdNightlight } from 'react-icons/md';
 import { Button, NavLink } from '../utils';
 import { AiOutlineMenu } from 'react-icons/ai';
 import logo from '../assets/img/logo.svg';
-
-const thems = () => {
-  return (
-    <>
-      {theme === 'light' && (
-        <button
-          type="button"
-          className="flex items-center justify-center"
-          onClick={() => setTheme('dark')}
-        >
-          <MdNightlight
-            className="pointer-events-none text-blue"
-            fontSize={20}
-          />
-        </button>
-      )}
-
-      {theme === 'dark' && (
-        <button
-          className="flex items-center justify-center"
-          onClick={() => setTheme('light')}
-        >
-          <MdLightMode
-            className="pointer-events-none text-gray"
-            fontSize={20}
-          />
-        </button>
-      )}
-    </>
-  );
-};
+import darkLogo from '../assets/img/dark.svg';
 
 const links = [
   { title: 'Home', name: 'Home', href: '/' },
   { title: 'projects', name: 'Projects', href: '/projects' },
   { title: 'pay', name: 'Pay', href: '/payment' },
-  { title: 'resume', name: 'Resume', href: '/resume' },
+  { title: 'resume', name: 'CV', href: '/resume' },
 ];
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const [menu, setMenu] = useState(false);
   const router = useRouter();
   return (
@@ -57,9 +26,17 @@ const Navbar = () => {
       <nav className="w-full py-2 md:py-3">
         <div className="container">
           <div className="flex items-center justify-between">
-            <Link href={'/'} className="text-xl font-bold uppercase">
-              <Image src={logo} alt="logo" width={40} height={40} />
-            </Link>
+            {theme === 'light' && (
+              <Link href={'/'} className="text-xl font-bold uppercase">
+                <Image src={logo} alt="logo" width={40} height={40} />
+              </Link>
+            )}
+            {theme === 'dark' && (
+              <Link href={'/'} className="text-xl font-bold uppercase">
+                <Image src={darkLogo} alt="logo" width={40} height={40} />
+              </Link>
+            )}
+
             <ul className="hidden items-center space-x-3 sm:flex">
               {links.map((link, i) => (
                 <NavLink
@@ -69,12 +46,7 @@ const Navbar = () => {
                 />
               ))}
 
-              <Button
-                onClick={() => router.push('/contact')}
-                className="px-1 lg:px-3"
-              >
-                Contact me
-              </Button>
+              <Button className="px-1 lg:px-3">Contact me</Button>
             </ul>
             <div className="block sm:hidden">
               <button
@@ -87,7 +59,7 @@ const Navbar = () => {
                 />
               </button>
               {menu && (
-                <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center justify-center bg-white backdrop-blur-md">
+                <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center justify-center bg-white dark:bg-blue">
                   <ul className="flex items-center space-x-2">
                     {links.map((link, i) => (
                       <NavLink

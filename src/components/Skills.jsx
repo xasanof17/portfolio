@@ -14,11 +14,11 @@ const Skills = ({ skills }) => {
             <div className="skills grid grid-cols-2 gap-3 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 lg:gap-5">
               {skills.map((item) => (
                 <div
-                  className="grid-rows-[1, 20px] grid content-between gap-3 rounded-lg border border-slate-300 bg-gray p-4"
+                  className="grid-rows-[1, 20px] grid content-between gap-3 rounded-lg border border-slate-300 dark:border-slate-500 bg-gray dark:bg-darkgray p-4"
                   key={item.node.id}
                 >
                   <div className="flex items-center justify-center">
-                    <div className="relative h-[100px] w-full">
+                    <div className="relative h-[70px] sm:h-[100px] w-[70px] sm:w-full">
                       <Image
                         src={item.node.photo.url}
                         fill
@@ -28,7 +28,7 @@ const Skills = ({ skills }) => {
                     </div>
                   </div>
                   <div className="flex items-center justify-center">
-                    <h3 className="capitalize text-blue dark:text-gray">
+                    <h3 className="capitalize text-blue">
                       {item.node.title}
                     </h3>
                   </div>

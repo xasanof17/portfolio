@@ -33,13 +33,13 @@ const About = () => {
               <Link
                 href="https://github.com/xasanof17/"
                 target={'_blank'}
-                className="mx-1 text-blue underline"
+                className="mx-1 text-blue dark:text-gray underline"
               >
                 Check out some of my latest projects
               </Link>
             </p>
           </div>
-          <div className="hidden items-center justify-center rounded-xl bg-slate-100 py-3 shadow md:flex">
+          <div className="hidden items-center justify-center rounded-xl bg-slate-100 dark:bg-transparent py-3 shadow md:flex">
             <div className="relative h-[300px] w-full">
               <Image src={'/about.avif'} fill alt="laptop img" />
             </div>
