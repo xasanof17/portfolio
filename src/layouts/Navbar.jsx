@@ -40,7 +40,7 @@ const Navbar = () => {
                 />
               ))}
 
-              <Button className="px-1 lg:px-3">Contact me</Button>
+              <Button onClick={() => router.push('/contact')} className="px-1 lg:px-3">Contact me</Button>
             </ul>
             <div className="block sm:hidden">
               <button
