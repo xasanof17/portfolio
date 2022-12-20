@@ -38,16 +38,9 @@ const Footer = () => {
         <div className="grid gap-3 md:grid-cols-2 md:gap-5">
           <div className="flex flex-col items-start justify-center">
             <div className="flex items-center space-x-3">
-              
                 <Link href={'/'} className="text-xl font-bold uppercase">
                   <Image src={logo} alt="logo" width={30} height={30} />
                 </Link>
-            
-//               {theme == 'dark' && (
-//                 <Link href={'/'} className="text-xl font-bold uppercase">
-//                   <Image src={darkLogo} alt="logo" width={30} height={30} />
-//                 </Link>
-//               )}
               <span>|</span>
               <ul className="flex space-x-3">
                 {icons.map((item, i) => (
