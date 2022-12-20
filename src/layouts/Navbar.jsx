@@ -27,16 +27,9 @@ const Navbar = () => {
         <div className="container">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-center">
-            
                 <Link href={'/'} className="text-xl font-bold uppercase">
                   <Image src={logo} alt="logo" width={40} height={40} />
                 </Link>
-            
-//               {theme === 'dark' && (
-//                 <Link href={'/'} className="text-xl font-bold uppercase">
-//                   <Image src={darkLogo} alt="logo" width={40} height={40} />
-//                 </Link>
-//               )}
             </div>
             <ul className="hidden items-center space-x-3 sm:flex">
               {links.map((link, i) => (
